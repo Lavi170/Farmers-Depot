@@ -4,7 +4,10 @@ import { Route, Routes} from 'react-router-dom'
 import WhoAreYou from './WhoAreYou'
 import Farmers from './Farmers'
 import MyProducts from './MyProducts'
-import AddProducts from './AddProducts'
+import AddProducts from './AddProducts';
+import Layout from './Layout'
+import { Routes, Route} from "react-router-dom"
+
 function App() {
 
   return (
@@ -15,7 +18,12 @@ function App() {
       <Route path='/farmers/myproducts' element={<MyProducts/>}></Route>
       <Route path='/farmers/addproduct' element={<AddProducts/>}></Route>
       </Route>
-     </Routes>
+    <Routes>
+    <Route path='/' element={<Layout />}>
+      <Route element={<WhoAreYou/>}></Route>
+      <Route ></Route>
+    </Route>
+     </Routes></Routes>
     </>
   )
 }
