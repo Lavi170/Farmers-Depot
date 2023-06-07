@@ -1,0 +1,38 @@
+#main-div{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 60vw;
+    width: 45vw;
+    justify-content: space-around;
+    background-color: #22593b;
+    background-image: linear-gradient(132deg, #22593b 0%, #16A085 50%, #58b33f 100%);        
+    border-radius: 15px;
+    align-items: center;
+    color: white;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+input{
+    height: 5vw;
+    width: 30vw;
+    border-radius: 5px;
+    border: unset;
+}
+#btn-submit{
+    height: 4vw;
+    width: 15vw;
+    border-radius: 5px;
+    background-color: #0f8d45;
+    color: white;
+    border: unset;
+}

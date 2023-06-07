@@ -1,0 +1,89 @@
+{
+    "farmers": [
+        {
+            "name": "",
+            "experience": "",
+            "location": "",
+            "crop1": {
+                "name": "",
+                "amount": ""
+            },
+            "crop2": {
+                "name": "",
+                "amount": ""
+            },
+            "crop3": {
+                "name": "",
+                "amount": ""
+            }
+        },
+        {
+            "name": "",
+            "experience": "",
+            "location": "",
+            "crop1": {
+                "name": "",
+                "amount": ""
+            },
+            "crop2": {
+                "name": "",
+                "amount": ""
+            },
+            "crop3": {
+                "name": "",
+                "amount": ""
+            }
+        },
+        {
+            "name": "",
+            "experience": "",
+            "location": "",
+            "crop1": {
+                "name": "",
+                "amount": ""
+            },
+            "crop2": {
+                "name": "",
+                "amount": ""
+            },
+            "crop3": {
+                "name": "",
+                "amount": ""
+            }
+        },
+        {
+            "name": "",
+            "experience": "",
+            "location": "",
+            "crop1": {
+                "name": "",
+                "amount": ""
+            },
+            "crop2": {
+                "name": "",
+                "amount": ""
+            },
+            "crop3": {
+                "name": "",
+                "amount": ""
+            }
+        },
+        {
+            "name": "",
+            "experience": "",
+            "location": "",
+            "crop1": {
+                "name": "",
+                "amount": ""
+            },
+            "crop2": {
+                "name": "",
+                "amount": ""
+            },
+            "crop3": {
+                "name": "",
+                "amount": ""
+            }
+        }
+    ]
+}
