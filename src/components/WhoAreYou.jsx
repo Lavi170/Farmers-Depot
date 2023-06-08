@@ -4,16 +4,16 @@ import './whoareyou.css'
 function WhoAreYou() {
   return (
     <div className='main-container'>
-        <h1 style={{fontSize:"10vw"}}>who are you?</h1>
+        <h1 className='first-page-h1'>Who Are You?</h1>
         <div className='container'>
-        <Link to={"/farmers"}>
-        <div className='link-div'>
-            farmer
+        <Link to={"/userpage"}>
+        <div className='main-link-div'>
+            Farmer
         </div>
         </Link>
-        <Link to={"/consumer"}>
-        <div className='link-div'>
-            consumer
+        <Link to={"/layout"}>
+        <div className='main-link-div'>
+            Consumer
         </div>
         </Link>
         </div>
