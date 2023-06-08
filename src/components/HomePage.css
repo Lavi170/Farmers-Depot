@@ -1,0 +1,99 @@
+.homepage {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .hero-section {
+    position: relative;
+  }
+  
+  .big-picture {
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+  }
+  
+  .overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .overlay p {
+    font-size: 1.5rem;
+  }
+  
+  .about-us {
+    margin-top: 2rem;
+    text-align: center;
+    width: 50%;
+    border-right: 1px solid black;
+    box-shadow: 2px 0px rgb(163, 161, 161);
+    padding-right: 2px;
+  }
+  
+  .about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-us p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .crop-example-pics{
+    width: 270px;
+    height: 16vw;
+    border-radius: 15%;
+  }
+  .middle-homepage{
+    display: flex;
+    margin-bottom: 5%;
+  }
+  .home-crop-example{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  @media (max-width: 800px) {
+    .middle-homepage{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-us{
+        border: none;
+        box-shadow: none;
+        margin-bottom: 4px;
+    }
+    .home-crop-example{
+        row-gap: 20px;
+    }
+    .about-us p{
+        font-size: 1rem;
+    }
+  }
+  @media (max-width: 550px) {
+    .crop-example-pics{
+        width: 200px;
+    }
+    .overlay h1{
+        font-size: 1.9rem;
+    }
+  }
+  @media (max-width: 380px) {
+    .crop-example-pics{
+        width: 160px;
+    }
+    .overlay h1{
+        font-size: 1.2rem;
+    }
+  }

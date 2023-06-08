@@ -1,88 +1,88 @@
 {
     "farmers": [
         {
-            "name": "",
-            "experience": "",
-            "location": "",
-            "crop1": {
-                "name": "",
-                "amount": ""
+            "name": "Moshe Rahamim",
+            "experience": "6",
+            "location": "Ein-Zivan",
+            "Product1": {
+                "productName": "Tomatoes",
+                "amount": "500"
             },
-            "crop2": {
-                "name": "",
-                "amount": ""
+            "Product2": {
+                "productName": "Potatoes",
+                "amount": "300"
             },
-            "crop3": {
-                "name": "",
-                "amount": ""
+            "Product3": {
+                "productName": "Cucumbers",
+                "amount": "600"
             }
         },
         {
-            "name": "",
-            "experience": "",
-            "location": "",
-            "crop1": {
-                "name": "",
-                "amount": ""
+            "name": "Ohad Matzliah",
+            "experience": "15",
+            "location": "Sderot",
+            "Product1": {
+                "productName": "Tomatoes",
+                "amount": "200"
             },
-            "crop2": {
-                "name": "",
-                "amount": ""
+            "Product2": {
+                "productName": "Potatoes",
+                "amount": "800"
             },
-            "crop3": {
-                "name": "",
-                "amount": ""
+            "Product3": {
+                "productName": "Cucumbers",
+                "amount": "350"
             }
         },
         {
-            "name": "",
-            "experience": "",
-            "location": "",
-            "crop1": {
-                "name": "",
-                "amount": ""
+            "name": "Ram David",
+            "experience": "8",
+            "location": "Beer-Sheva",
+            "Product1": {
+                "productName":"Tomatoes",
+                "amount": "100"
             },
-            "crop2": {
-                "name": "",
-                "amount": ""
+            "Product2": {
+                "productName":"Potatoes",
+                "amount": "60"
             },
-            "crop3": {
-                "name": "",
-                "amount": ""
+            "Product3": {
+                "productName":"Cucumbers",
+                "amount": "300"
             }
         },
         {
-            "name": "",
-            "experience": "",
-            "location": "",
-            "crop1": {
-                "name": "",
-                "amount": ""
+            "name": "Ori Sahar",
+            "experience": "3",
+            "location": "Haifa",
+            "Product1": {
+                "productName":"Tomatoes",
+                "amount": "400"
             },
-            "crop2": {
-                "name": "",
-                "amount": ""
+            "Product2": {
+                "productName":"Potatoes",
+                "amount": "95"
             },
-            "crop3": {
-                "name": "",
-                "amount": ""
+            "Product3": {
+                "productName":"Cucumbers",
+                "amount": "350"
             }
         },
         {
-            "name": "",
-            "experience": "",
-            "location": "",
-            "crop1": {
-                "name": "",
-                "amount": ""
+            "name": "Itay Elkobi",
+            "experience": "22",
+            "location": "Tel-Aviv",
+            "Product1": {
+                "productName":"Tomatoes",
+                "amount": "670"
             },
-            "crop2": {
-                "name": "",
-                "amount": ""
+            "Product2": {
+                "productName":"Potatoes",
+                "amount": "750"
             },
-            "crop3": {
-                "name": "",
-                "amount": ""
+            "Product3": {
+                "productName":"Cucumbers",
+                "amount": "260"
             }
         }
     ]
