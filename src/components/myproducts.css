@@ -1,0 +1,43 @@
+.crop-container{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 20px;
+    align-items: center;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 10px;
+    font-family: cursive;
+}
+#myproducts-div{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    row-gap: 30px;
+    margin-right: 20px; 
+    column-gap:20px ;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+.btns{
+    height: 40px;
+    width: 200px;
+    background-color: aquamarine;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: cursive;
+}
+.diveder{
+    position: absolute;
+    width: 100vw;
+}
+#title{
+    text-align: center;
+    font-size: 50px;
+    font-family: cursive;
+}

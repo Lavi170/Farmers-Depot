@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import WhoAreYou from "./WhoAreYou";
@@ -21,11 +20,10 @@ import Farmers from "./Farmers";
 import { db } from "./firebase-config";
 import { getDocs, collection, getDoc } from "firebase/firestore";
 function App() {
-  const [isloggedout, setloggedout] = useState(false);
-  const [farmersList, setFarmersList] = useState([]);
-  const farmerList = collection(db, "crops");
-  const [mainData, SetmainData] = useState([]);
-
+  const [isloggedout, setloggedout] = useState(false)
+  const [farmersList,setFarmersList]=useState([]);
+  const farmerList=collection(db,"crops");
+    const [mainData, SetmainData] = useState([]);
   useEffect(() => {
     data && SetmainData(data.farmers);
   }, []);
@@ -35,29 +33,55 @@ function App() {
     data && SetProductData(data2.products);
   }, []);
 
-  const [currentProduct, setcurrentProduct] = useState();
 
-  const getFarmerList = async () => {
+  const getCropsList = async () => {
     try {
-      const data = await getDocs(farmerList);
-      console.log(data);
-      const filteredData = data.docs.map((doc) => ({
+      const crops = await getDocs(cropsDB)
+      const filteredCrops = crops.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
-      }));
-      console.log(filteredData);
-      setFarmersList(filteredData);
-      console.log(farmersList);
-    } catch (err) {
+      }))
+      setcropList(filteredCrops);
+    }catch(err){
+      console.error(err);
+    }};
+      
+
+  const getFarmerList=async()=>{
+    try{
+  const data = await getDocs(farmerList)  
+  console.log(data)
+  const filteredData = data.docs.map((doc)=>({
+    ...doc.data(),
+    id: doc.id,}));
+    console.log(filteredData)
+    setFarmersList(filteredData);
+    console.log(farmersList)
+    }
+    catch(err){
       console.error(err);
     }
-  };
-  useEffect(() => {
-    getFarmerList();
-  }, []);
+  }
+  useEffect(()=>{  
+   getFarmerList();
+   getCropsList();
+  },[])
   console.log(farmersList);
-  return (
+ return (
     <>
+
+      <Routes>
+        <Route path='/' element={<WhoAreYou />}></Route>
+        <Route path='/user' element={<Userpage />}>
+          <Route path='' element={<Loginpage isloggedout={isloggedout} setloggedout={setloggedout} />}></Route>
+          <Route path='Signup' element={<Signuppage isloggedout={isloggedout} setloggedout={setloggedout} />}></Route>
+        </Route>
+        <Route path='/farmers/myproducts' element={<MyProducts cropList={cropList} />}></Route>
+        <Route path='/farmers/addproduct' element={<AddProducts cropList={cropList} getFarmerList={getFarmerList} setcropList={setcropList} />}></Route>
+        <Route path='/consumer-layout' element={<Layout />}>
+          <Route index></Route>
+        </Route>
+      </Routes>
       <Routes>
         <Route path="/" element={<WhoAreYou />}></Route>
 
@@ -115,15 +139,18 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/About" element={<About />}></Route>
+        <Route path='/About' element={<About/>}></Route>
         <Route path="/contactus" element={<ContactUs />}></Route>
-        <Route path="/allproducts" element={<AllProducts />}></Route>
+        <Route path="/allproducts" element={<AllProducts/>}></Route>
+        {/* <Route path='userpage' element={<UserPage />}>
+              <Route path="" element={<Login />}></Route>
+              <Route path='signup' element={<SignUp />}></Route>
+            </Route> */}
         <Route path="/layout" element={<Layout />}>
           <Route path="/layout" element={<HomePage />}></Route>
-          <Route path="/layout/About" element={<About />}></Route>
-          <Route path="/layout/contactus" element={<ContactUs />}></Route>
-          <Route path="/layout/Payment" element={<Paymet/>}></Route>
-          <Route path="/layout/Farmers" element={<Farmers data={data}/>}></Route>
+          <Route path="/layout/farmers" element={<Farmers />}></Route>
+          <Route path='/layout/About' element={<About />}></Route>
+        <Route path="/layout/contactus" element={<ContactUs />}></Route>
         </Route>
       </Routes>
     </>
