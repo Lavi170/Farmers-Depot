@@ -14,8 +14,24 @@ import About from './About'
 import ContactUs from "./ContactUs";
 import data2 from "../Products.json";
 import AllProducts from "./AllProducts";
+import { useState,useEffect } from 'react'
+import './App.css'
+import { Route, Routes} from 'react-router-dom'
+import WhoAreYou from './WhoAreYou'
+import Farmers from './Farmers'
+import MyProducts from './MyProducts'
+import AddProducts from './AddProducts';
+import Layout from './Layout'
+import Signuppage from './SignupPage'
+import Userpage from './UserPage'
+import Loginpage from './Loginpage'
+import {db} from './firebase-config'
+import {getDocs,collection,getDoc} from 'firebase/firestore'
 function App() {
-  const [mainData, SetmainData] = useState([]);
+  const [isloggedout, setloggedout] = useState(false)
+  const [farmersList,setFarmersList]=useState([]);
+  const farmerList=collection(db,"crops");
+    const [mainData, SetmainData] = useState([]);
   useEffect(() => {
     data && SetmainData(data.farmers);
   }, []);
@@ -27,8 +43,42 @@ function App() {
 
   const [currentProduct, setcurrentProduct] = useState();
 
-  return (
+  const getFarmerList=async()=>{
+    try{
+  const data = await getDocs(farmerList)  
+  console.log(data)
+  const filteredData = data.docs.map((doc)=>({
+    ...doc.data(),
+    id: doc.id,}));
+    console.log(filteredData)
+    setFarmersList(filteredData);
+    console.log(farmersList)
+    }
+    catch(err){
+      console.error(err);
+    }
+  }
+  useEffect(()=>{  
+   getFarmerList();
+  },[])
+  console.log(farmersList);
+ return (
     <>
+
+     <Routes>
+      <Route path='/' element={<WhoAreYou/>}></Route>
+      <Route path='/farmers' element={<Farmers/>}>
+      </Route>
+      <Route path='/farmers/user' element={<Userpage />}>
+                <Route path='' element={<Loginpage isloggedout={isloggedout} setloggedout={setloggedout} />}></Route>
+                <Route path='Signup' element={<Signuppage isloggedout={isloggedout} setloggedout={setloggedout} />}></Route>
+              </Route>  
+      <Route path='/farmers/myproducts' element={<MyProducts farmersList={farmersList}/>}></Route>
+      <Route path='/farmers/addproduct' element={<AddProducts farmersList={farmersList} getFarmerList={getFarmerList} setFarmersList={setFarmersList}/>}></Route>
+    <Route path='/consumer-layout' element={<Layout />}>
+      <Route index></Route>
+    </Route>
+     </Routes>
       <Routes>
         <Route path="/" element={<WhoAreYou /> }></Route>
         <Route path="/farmerpage" element={<FarmerPage />}>

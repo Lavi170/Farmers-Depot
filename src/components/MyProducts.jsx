@@ -1,18 +1,17 @@
 import React from 'react'
-
-function MyProducts() {
+import {db} from './firebase-config'
+import {getDocs,collection} from 'firebase/firestore'
+function MyProducts({farmersList}) {
   return (
     <div>
-        <div className='form'>
-            <div>Add new crop</div>
-            <span>crop name:</span>
-            <input type="text" placeholder=' insert crop' />
-            <span>amount:</span>
-            <input type="text" placeholder='insert anount' />
-            <span>price:</span>
-            <input type="text" placeholder=' insert price' />
-            
+          {farmersList.map((farmer)=>(
+        <div>
+          <h1>name:{farmer.email}</h1>
+          <p>years of expirience:{farmer.password}</p>
+          <p>location:{farmer.usernmae}</p>
+          <button>delete</button>
         </div>
+      ))}
     </div>
   )
 }
