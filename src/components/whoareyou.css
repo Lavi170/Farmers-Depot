@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-position: center center;
   }
   
   .container {
@@ -21,7 +22,7 @@
   .main-link-div {
     height: 18vw;
     width: 17vw;
-    background-color: rgb(170, 197, 0);
+    background-color: rgb(119, 137, 0);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -29,17 +30,18 @@
     border-radius: 15px;
     font-size: 4vw;
     opacity: 0.4;
+    color: snow;
   }
   
   .main-link-div:hover {
-    opacity: 1;
+    opacity: 0.7;
   }
   .first-page-h1{
     font-family: Georgia, serif;
 font-size: 4vw;
 letter-spacing: -1px;
 word-spacing: 2.4px;
-color: #7e8003;
+color: #b6b837;
 font-weight: 700;
 text-decoration: none;
 font-style: italic;
