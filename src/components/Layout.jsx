@@ -13,7 +13,7 @@ const Layout = () => {
         <div className="nav-left-side">
          <a href="/layout"> <img src={logo} alt="" style={{height:"7vw"}}/> </a>
         </div>
-        <Link  to={"/farmers"}>
+        <Link  to={"/AllProducts"}>
           <button id="cta">
     <span id="hover-underline-animation"> Shop now </span>
     <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
@@ -21,7 +21,7 @@ const Layout = () => {
     </svg>
 </button>
         </Link>
-        <Link to={"/products"}>
+        <Link to={"/layout/Farmers"}>
         <button id="cta">
     <span id="hover-underline-animation"> Our Trusted Farmers </span>
     <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
@@ -29,9 +29,7 @@ const Layout = () => {
     </svg>
 </button>
         </Link>
-        <Link to={"/UserPage"}>
-          <button className="login-signup"> Log in </button>
-        </Link>
+        
       </nav>
       <Outlet></Outlet>
 

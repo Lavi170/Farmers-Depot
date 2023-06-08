@@ -43,15 +43,15 @@ function Signuppage({ isloggedout, setloggedout }) {
     <div>
       <div className='sign-page'>
         <h2>Sign-up</h2>
-        <TextField id="filled-basic" label="username" variant="filled" className='user-inputs' type='text'  name="user_name" onChange={(e)=>{setusername(e.target.value)}} />
-        <TextField id="filled-basic" label="email" variant="filled" className='user-inputs' type='email' name="user_email"  onChange={(e)=>{setemail(e.target.value)}}/>
+        <TextField style={{paddingTop:"10px"}} id="filled-basic" label="username" variant="filled" className='user-inputs' type='text'  name="user_name" onChange={(e)=>{setusername(e.target.value)}} />
+        <TextField style={{paddingTop:"10px"}} id="filled-basic" label="email" variant="filled" className='user-inputs' type='email' name="user_email"  onChange={(e)=>{setemail(e.target.value)}}/>
         <TextField id="filled-basic" label="Password" variant="filled" className='user-inputs' type='password' onChange={(e)=>{setpassword(e.target.value)}} />
         <TextField id="filled-basic" label="Confirm Password" variant="filled" className='user-inputs' type='password' onChange={(e)=>{setverify(e.target.value)}} />
           <button className='user-buttons' type="submit" value="Sign-up" onClick={Signin}> sign in</button>
           <button className='user-buttons' onClick={signInWithGoogle}>Sign in with google</button>
           <button className='user-buttons' onClick={logOut}>Log out</button>
         {/* <button className='user-buttons' onClick={() => setUser()}>Sign-up</button> */}
-        <p>Already a member?<Link to='/farmers/user'>Login here</Link></p>
+        <p>Already a member?<Link to='/user'>Login here</Link></p>
         </div>
         
       </div>

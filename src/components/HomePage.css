@@ -22,8 +22,9 @@
   }
   
   .overlay h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
+    color: snow;
   }
   
   .overlay p {
@@ -47,6 +48,7 @@
   .about-us p {
     font-size: 1.2rem;
     line-height: 1.5;
+    color: black;
   }
   .crop-example-pics{
     width: 270px;

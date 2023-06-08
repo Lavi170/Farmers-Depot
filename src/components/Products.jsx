@@ -10,39 +10,27 @@ const Products = ({ value, setValue }) => {
   }, [value]);
   if (!currentProduct) {
     return <div>Loading...</div>;
-    console.log(currentProduct);
   }
   return (
-    <div>
-      {/* <div className="big-product-page">
-        <div className="Product-card" key={index}>
-          <div className="Product-card-img-one">
-            <Link to={`${item.name}`}></Link>
-          </div>
-          <div className="Product-card-text-one">
-            <h3>{item.name} </h3>
-            <br />
-            <span>{`${item.experience} Years Of Experience|`}</span>
-            <span> {`${item.Product1.productName}:`}</span>
-          <span>{` ${item.Product1.amount}`} </span>
-          <span>{` ${item.Product2.productName}`} </span>
-          <span>{` ${item.Product2.amount}`} </span>
-          <span>{` ${item.Product3.productName}`} </span>
-          <span>{` ${item.Product3.amount}`} </span>
-            <br />
-            <div className="App"></div>
-          </div>
-        </div>
-      </div> */}
-        {currentProduct?.name}
+   <div className="big-container">
+        <div className="description-page">
+      <h1 className="headline">{currentProduct?.name}</h1>
+      <div className="explanation-section">
+        <p>
+          {currentProduct?.discription}
+        </p>
+      </div>
+      <div className="explanation-section">
+        <h1 style={{color:"snow"}}>How Do We Harvest?</h1>
         <br />
-        <br />
-        {currentProduct?.discription}
-        <br />
-        <br />
+        <p>
         {currentProduct?.harvest}
+        </p>
+      </div>
     </div>
+     </div>
   );
 };
 
 export default Products;
+
