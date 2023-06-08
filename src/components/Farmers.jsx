@@ -6,12 +6,12 @@ function Farmers() {
     <div className='container1'>
         <div>welcome moshe</div>
         <div className='link-container'>
-            <Link to={"myproducts"}>
+            <Link to={"user"}>
         <div className='link-div'>
             Log in
         </div>
             </Link>
-            <Link to={"addproduct"}>
+            <Link to={"user/Signup"}>
         <div className='link-div'>
             Sign up
         </div>
