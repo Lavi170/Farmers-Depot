@@ -1,37 +1,35 @@
 import React, { useState } from 'react'
 import './addproduct.css'
-import { addDoc,getDocs,collection,setDoc,doc,updateDoc,getDoc } from 'firebase/firestore'
-import {db} from './firebase-config'
-function AddProducts({ farmersList,farmerList,getfarmerslist,setFarmersList}) {
+import { addDoc } from 'firebase/firestore'
+import { auth, db } from './firebase-config'
+import { collection } from 'firebase/firestore';
+function AddProducts({ farmersList, getFarmerList, setFarmersList }) {
   const [croptype, setCropType] = useState("");
   const [amount, setAmount] = useState("");
   const [price, setPrice] = useState("");
-  const farmers = doc(db, "crops", "farmers");
+  const crops = collection(db, "crops");
+
+console.log(auth?.currentUser);
+
   const addProduct = async () => {
-    const updatedFarmersList = [...farmersList];
-    console.log(updatedFarmersList)
-    const newCrop = {
-      price: Number(price),
-      amount: Number(amount)
-    };
-    const updatedCrops = {
-      ...updatedFarmersList[0].usersCrops.cropID, // Copy existing crops for the farmer
-      [croptype]:newCrop  // Add the new crop using computed property syntax
-    };
-    console.log(updatedCrops)
-    updatedFarmersList[0].usersCrops.cropID=updatedCrops; 
-       setFarmersList(updatedFarmersList)
-       console.log(farmersList)
     try {
-      console.log('hey');
-      await updateDoc(farmers,{farmersList});
-      console.log(farmersList);
-      getfarmerslist();
-    }
-    catch (err) {
-      console.error(err);
+      if (auth?.currentUser) {
+
+        const newCrop = {
+          cropName: croptype,
+          price: Number(price),
+          amount: Number(amount),
+          farmerId: auth.currentUser.uid
+        };
+
+        await addDoc(crops, newCrop)
+        getFarmerList();
+      }
+    } catch (err) {
+      console.log(err)
     }
   }
+
   return (
     <div id='main-div'>
       <div className='form'>

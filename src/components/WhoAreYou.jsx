@@ -6,7 +6,7 @@ function WhoAreYou() {
     <div className='main-container'>
         <h1 className='first-page-h1'>Who Are You?</h1>
         <div className='container'>
-        <Link to={"/userpage"}>
+        <Link to={"/user"}>
         <div className='main-link-div'>
             Farmer
         </div>
