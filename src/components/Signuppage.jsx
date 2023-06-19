@@ -1,21 +1,22 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
-import { Outlet, Link, useParams, useNavigate } from 'react-router-dom'
+import { Outlet, Link, useParams } from 'react-router-dom'
 import { useState, } from 'react';
 import { useRef } from 'react';
 import { auth, googleProvider } from './firebase-config'
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom';
 function Signuppage({ isloggedout, setloggedout }) {
   const navigate = useNavigate()
   const [username, setusername] = useState()
   const [email, setemail] = useState()
   const [password, setpassword] = useState()
   const [verify, setverify] = useState()
-  const [userObj, setuserObj] = useState({})
   const form = useRef();
   const Signin = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      navigate("FarmerPage")
     }
     catch (err) {
       console.error(err);
@@ -24,6 +25,18 @@ function Signuppage({ isloggedout, setloggedout }) {
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+        if (auth?.currentUser) {
+  
+          const newCrop = {
+            name: username,
+            email: email,
+            password: password,
+            Id: auth.currentUser.uid
+          };
+  
+          await addDoc(crops, newCrop)
+          getFarmerList();
+        }
     }
     catch (err) {
       console.error(err);

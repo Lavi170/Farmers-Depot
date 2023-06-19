@@ -9,8 +9,11 @@ nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #00d812;
-  background-image: linear-gradient(62deg, #00d812 0%, #503c15 100%);
+  /* background-color: #00d812;
+  background-image: linear-gradient(62deg, #00d812 0%, #503c15 100%); */
+  background-color: #004209;
+background-image: linear-gradient(0deg, #004209 0%, #2AF598 100%);
+
   
 }
 a:link {

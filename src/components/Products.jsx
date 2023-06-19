@@ -16,14 +16,14 @@ const Products = ({ value, setValue }) => {
         <div className="description-page">
       <h1 className="headline">{currentProduct?.name}</h1>
       <div className="explanation-section">
-        <p>
+        <p style={{color:"white"}}>
           {currentProduct?.discription}
         </p>
       </div>
       <div className="explanation-section">
         <h1 style={{color:"snow"}}>How Do We Harvest?</h1>
         <br />
-        <p>
+        <p style={{color:"white"}}> 
         {currentProduct?.harvest}
         </p>
       </div>

@@ -13,6 +13,7 @@ const [editPrice,setEditPrice]=useState();
   const editCrop= async(id)=>{
     const cropDoc2 = doc(db,"crops",id)
     await updateDoc(cropDoc2,{amount:editAmount,price:editPrice})
+    window.location.reload();
   };
   return (
     <div>
