@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards-2';
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
-import './App.css'
-import 'react-credit-cards-2/dist/es/styles-compiled.css';
-
+import StarRating from './StarRaiting.jsx';
+import { Link } from 'react-router-dom';
 const PaymentForm = () => {
+    
   const [state, setState] = useState({
     number: '',
     expiry: '',
@@ -74,6 +74,15 @@ const PaymentForm = () => {
         />
         </dir>
       </form>
+      <div>
+        
+      </div>
+      <br />
+      <div style={{textAlign:"center"}}>
+      <StarRating></StarRating></div>
+      <button className="button-17" role="button" style={{marginLeft:"46%"}}>
+             <Link to={"/layout/receipt"}>Buy Now</Link> 
+            </button>
     </div>
   );
 };

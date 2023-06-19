@@ -8,8 +8,8 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #4158D0;
-background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-color: #00d812;
+background-image: linear-gradient(62deg, #00d812 0%, #503c15 100%);
 
 }
 
@@ -28,8 +28,8 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 .user-buttons{
     width: 280px;
     height: 40px;
-    background-color: #FF3CAC;
-    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%,#2B86C5 100%);
+    background-color: #00d812;
+background-image: linear-gradient(62deg, #00d812 0%, #503c15 100%);
     border : 0;
     color: white;
     cursor: pointer;
@@ -76,3 +76,4 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     justify-content: space-evenly;
     border-radius: 15px;
 }
+p{color: black;}

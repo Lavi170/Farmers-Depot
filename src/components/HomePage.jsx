@@ -13,7 +13,7 @@ const HomePage = () => {
 
           <div className="overlay">
             <h1>Welcome to Our Farming Website</h1>
-            <p>Connecting Farmers and Consumers</p>
+            <p style={{color:"snow"}}>Connecting Farmers and Consumers</p>
           </div>
         </div>
 <div className="middle-homepage">

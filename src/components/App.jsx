@@ -16,9 +16,13 @@ import Layout from './Layout'
 import Signuppage from './SignupPage'
 import Userpage from './UserPage'
 import Loginpage from './Loginpage'
+import BuyProducts from "./BuyProducts";
 import { db,auth } from './firebase-config'
 import { getDocs, collection, getDoc } from 'firebase/firestore'
-
+import Crops from "./Crops.jsx";
+import PaymentForm from "./Payment";
+import StarRating from "./StarRaiting";
+import Receipt from "./Receipt";
 function App() {
   const [isloggedout, setloggedout] = useState(false)
   const [cropList, setcropList] = useState([]);
@@ -68,59 +72,18 @@ function App() {
       <Routes>
         <Route path='/' element={<WhoAreYou />}></Route>
         <Route path='/user' element={<Userpage />}>
-          <Route path='' element={<Loginpage isloggedout={isloggedout} setloggedout={setloggedout} />}></Route>
-          <Route path='Signup' element={<Signuppage isloggedout={isloggedout} setloggedout={setloggedout} />}></Route>
+          <Route path='' element={<Loginpage isloggedout={isloggedout} setloggedout={setloggedout}  cropList={cropList} farmer={farmers}/>}></Route>
+          <Route path='Signup' element={<Signuppage isloggedout={isloggedout} setloggedout={setloggedout} cropList={cropList} farmer={farmers}/>}></Route>
         </Route>
-        <Route path='/farmers/myproducts' element={<MyProducts cropList={cropList} />}></Route>
-        <Route path='/farmers/addproduct' element={<AddProducts cropList={cropList} getFarmerList={getFarmerList} setcropList={setcropList} />}></Route>
+        <Route path='/my-products' element={<MyProducts cropList={cropList} />}></Route>
+        <Route path='/add-product' element={<AddProducts cropList={cropList} getFarmerList={getFarmerList} setcropList={setcropList} />}></Route>
         <Route path='/consumer-layout' element={<Layout />}>
           <Route index></Route>
         </Route>
       </Routes>
       <Routes>
-        <Route path="/" element={<WhoAreYou />}></Route>
-
-        <Route path="/FarmerPage" element={<FarmerPage />}></Route>
-        <Route path="/my-products" element={<MyProducts/>}></Route>
-        <Route path="/add-product" element={<AddProducts/>}></Route>
-        <Route path="/user" element={<Userpage />}>
-          <Route
-            path=""
-            element={
-              <Loginpage
-                isloggedout={isloggedout}
-                setloggedout={setloggedout}
-              />
-            }
-          ></Route>
-          <Route
-            path="Signup"
-            element={
-              <Signuppage
-                isloggedout={isloggedout}
-                setloggedout={setloggedout}
-              />
-            }
-          ></Route>
-        </Route>
-
-        <Route
-          path="/farmers/myproducts"
-          element={<MyProducts farmersList={farmersList} />}
-        ></Route>
-        <Route
-          path="/farmers/addproduct"
-          element={
-            <AddProducts
-              farmersList={farmersList}
-              getFarmerList={getFarmerList}
-              setFarmersList={setFarmersList}
-            />
-          }
-        ></Route>
-        <Route path="/consumer-layout" element={<Layout />}>
-          <Route index></Route>
-        </Route>
+        <Route path="/user/Signup/FarmerPage" element={<FarmerPage />}></Route>
+        
       </Routes>
       <Routes>
         <Route
@@ -134,9 +97,11 @@ function App() {
             />
           }
         ></Route>
+        <Route path="/buy-products" element={<BuyProducts />}></Route>
+        <Route path="/crops" element={<Crops/>}></Route>
         <Route path='/About' element={<About />}></Route>
         <Route path="/contactus" element={<ContactUs />}></Route>
-        <Route path="/allproducts" element={<AllProducts />}></Route>
+        <Route path="/Allproducts" element={<AllProducts  cropList={cropList}/>}></Route>
         {/* <Route path='userpage' element={<UserPage />}>
               <Route path="" element={<Login />}></Route>
               <Route path='signup' element={<SignUp />}></Route>
@@ -144,6 +109,9 @@ function App() {
         <Route path="/layout" element={<Layout />}>
           <Route path="/layout" element={<HomePage />}></Route>
           <Route path='/layout/About' element={<About />}></Route>
+        <Route path="/layout/crops" element={<Crops/>}></Route>
+        <Route path="/layout/payment" element={<PaymentForm/>}></Route>
+        <Route path="/layout/receipt" element={<Receipt/>}></Route>
           <Route path="/layout/contactus" element={<ContactUs />}></Route>
         </Route>
       </Routes>

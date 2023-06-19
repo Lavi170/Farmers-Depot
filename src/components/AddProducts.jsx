@@ -24,6 +24,7 @@ console.log(auth?.currentUser);
 
         await addDoc(crops, newCrop)
         getFarmerList();
+        window.location.reload();
       }
     } catch (err) {
       console.log(err)
