@@ -13,7 +13,7 @@ import WhoAreYou from './WhoAreYou'
 import MyProducts from './MyProducts'
 import AddProducts from './AddProducts';
 import Layout from './Layout'
-import Signuppage from './SignupPage'
+import Signuppage from './Signuppage'
 import Userpage from './UserPage'
 import Loginpage from './Loginpage'
 import BuyProducts from "./BuyProducts";
